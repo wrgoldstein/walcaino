@@ -1,0 +1,2180 @@
+Interactive Elixir (1.12.3) - press Ctrl+C to exit (type h() ENTER for help)
+[
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+{[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:57.769 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.231.0>, #Reference<0.4194216375.1350828034.97933>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:57.879 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.231.0>, #Reference<0.4194216375.1350828039.97213>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:57.980 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.233.0>, #Reference<0.4194216375.1350828039.97228>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:57.982 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.258.0>, #Reference<0.4194216375.1350828034.98090>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.085 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.258.0>, #Reference<0.4194216375.1350828034.98107>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.188 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.258.0>, #Reference<0.4194216375.1350828041.96569>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.191 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.283.0>, #Reference<0.4194216375.1350828033.96633>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.294 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.288.0>, #Reference<0.4194216375.1350828033.96684>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.397 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.291.0>, #Reference<0.4194216375.1350828041.96628>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.399 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.308.0>, #Reference<0.4194216375.1350828041.96662>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.503 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.312.0>, #Reference<0.4194216375.1350828041.96719>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.605 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.312.0>, #Reference<0.4194216375.1350828040.96589>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.609 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.335.0>, #Reference<0.4194216375.1350828041.96759>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.711 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.342.0>, #Reference<0.4194216375.1350828034.98131>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.815 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.336.0>, #Reference<0.4194216375.1350828039.97292>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.818 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.360.0>, #Reference<0.4194216375.1350828039.97345>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:58.920 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.361.0>, #Reference<0.4194216375.1350828040.96664>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.024 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.360.0>, #Reference<0.4194216375.1350828039.97378>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.027 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.385.0>, #Reference<0.4194216375.1350828041.96828>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.131 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.393.0>, #Reference<0.4194216375.1350828040.96679>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.239 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.393.0>, #Reference<0.4194216375.1350828040.96702>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.242 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.410.0>, #Reference<0.4194216375.1350828041.96886>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.345 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.415.0>, #Reference<0.4194216375.1350828040.96762>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.448 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.415.0>, #Reference<0.4194216375.1350828040.96784>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.452 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.437.0>, #Reference<0.4194216375.1350828040.96844>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.555 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.437.0>, #Reference<0.4194216375.1350828039.97462>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.658 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.438.0>, #Reference<0.4194216375.1350828034.98164>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.661 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.462.0>, #Reference<0.4194216375.1350828034.98198>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.764 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.464.0>, #Reference<0.4194216375.1350828040.96880>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.867 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.462.0>, #Reference<0.4194216375.1350828034.98235>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.869 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.487.0>, #Reference<0.4194216375.1350828041.97039>}, {:ask, 10}}
+iex(1)> [
+  broadway: [
+    index: 0,
+    hibernate_after: 15000,
+    context: :context_not_set,
+    resubscribe_interval: 100,
+    max_seconds: 5,
+    max_restarts: 3,
+    shutdown: 30000,
+    name: Walcaino.Broadway,
+    producer: [
+      hibernate_after: 15000,
+      transformer: nil,
+      concurrency: 1,
+      module: {Walcaino.Worker, []}
+    ],
+    processors: [
+      default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+    ],
+    batchers: [
+      s3: [
+        hibernate_after: 15000,
+        concurrency: 5,
+        batch_size: 10,
+        batch_timeout: 1000
+      ]
+    ]
+  ]
+]
+iex(1)> {[
+   broadway: [
+     index: 0,
+     hibernate_after: 15000,
+     context: :context_not_set,
+     resubscribe_interval: 100,
+     max_seconds: 5,
+     max_restarts: 3,
+     shutdown: 30000,
+     name: Walcaino.Broadway,
+     producer: [
+       hibernate_after: 15000,
+       transformer: nil,
+       concurrency: 1,
+       module: {Walcaino.Worker, []}
+     ],
+     processors: [
+       default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]
+     ],
+     batchers: [
+       s3: [
+         hibernate_after: 15000,
+         concurrency: 5,
+         batch_size: 10,
+         batch_timeout: 1000
+       ]
+     ]
+   ]
+ ], []}
+iex(1)> 
+14:58:59.971 [error] GenServer Walcaino.Broadway.Broadway.Producer_0 terminating
+** (MatchError) no match of right hand side value: {[broadway: [index: 0, hibernate_after: 15000, context: :context_not_set, resubscribe_interval: 100, max_seconds: 5, max_restarts: 3, shutdown: 30000, name: Walcaino.Broadway, producer: [hibernate_after: 15000, transformer: nil, concurrency: 1, module: {Walcaino.Worker, []}], processors: [default: [hibernate_after: 15000, max_demand: 10, concurrency: 10]], batchers: [s3: [hibernate_after: 15000, concurrency: 5, batch_size: 10, batch_timeout: 1000]]]], []}
+    (walcaino 0.1.0) lib/walcaino/worker.ex:23: Walcaino.Worker.handle_demand/2
+    (broadway 1.0.3) lib/broadway/topology/producer_stage.ex:107: Broadway.Topology.ProducerStage.handle_demand/2
+    (gen_stage 1.1.2) lib/gen_stage.ex:2134: GenStage.noreply_callback/3
+    (stdlib 3.14.2.2) gen_server.erl:689: :gen_server.try_dispatch/4
+    (stdlib 3.14.2.2) gen_server.erl:765: :gen_server.handle_msg/6
+    (stdlib 3.14.2.2) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Last message: {:"$gen_producer", {#PID<0.490.0>, #Reference<0.4194216375.1350828034.98310>}, {:ask, 10}}
+iex(1)> 
+BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
+       (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
